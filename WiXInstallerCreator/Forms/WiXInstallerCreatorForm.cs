@@ -10,7 +10,6 @@ namespace WiXInstallerCreator
     using System.ComponentModel;
     using System.Diagnostics;
     using System.IO;
-    using System.Reflection;
     using System.Windows.Forms;
     using System.Xml;
 
@@ -57,7 +56,7 @@ namespace WiXInstallerCreator
         /// <summary>
         /// The network share directory where scripts are stored
         /// </summary>
-        private const string RequiredFilesDirectory = @"\\data\shares\ENG\GPE\InternalTestTools\WiXInstallerCreator";
+        private const string RequiredFilesDirectory = @"..\\..\\..\\";
         /// <summary>
         /// Harvested wxs file location
         /// </summary>
@@ -716,8 +715,7 @@ namespace WiXInstallerCreator
         /// <param name="args">Provides a value to use with event</param>
         private void AboutToolStripMenuItemClick(object sender, EventArgs args)
         {
-            AboutForm about = new AboutForm(Assembly.GetExecutingAssembly());
-            about.ShowDialog(this);
+            new Forms.AboutForm().ShowDialog();
         }
 
         /// <summary>
