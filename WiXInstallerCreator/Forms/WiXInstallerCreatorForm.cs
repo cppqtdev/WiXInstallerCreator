@@ -1,7 +1,6 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file = "WiXInstallerCreatorForm.cs" company = "IGT">
-//     Copyright (c) 2011-2016 IGT. All rights reserved.
-// </copyright>
+//-----------------------------------------------------------------------
+// <Author = "Mohammad Reza" />
+// <File = "WiXInstallerCreatorForm.cs" />
 //-----------------------------------------------------------------------
 
 namespace WiXInstallerCreator
@@ -14,7 +13,6 @@ namespace WiXInstallerCreator
     using System.Reflection;
     using System.Windows.Forms;
     using System.Xml;
-    using ToolUseReportingSystem;
 
     /// <summary>
     /// Main application form. Used to provide functionailty to the user so 
@@ -80,10 +78,6 @@ namespace WiXInstallerCreator
         /// Inducates if operation is successful
         /// </summary>
         private bool success = false;
-        /// <summary>
-        /// Reporting object instance for this program.
-        /// </summary>
-        private readonly UserStatsReporting reporting;
 
         #endregion Fields
 
@@ -95,9 +89,6 @@ namespace WiXInstallerCreator
         public WiXInstallerCreatorForm()
         {
             InitializeComponent();
-
-            // set up statistic reporting
-            reporting = new UserStatsReporting(Assembly.GetExecutingAssembly());
 
             createInstallerBackgroundWorker.WorkerSupportsCancellation = true;
             createInstallerBackgroundWorker.WorkerReportsProgress = true;
@@ -631,9 +622,6 @@ namespace WiXInstallerCreator
         /// <param name="args">Provides a value to use with event</param>
         private void WiXInstallerCreatorFormLoad(object sender, EventArgs args)
         {
-            // start reporting session
-            reporting.SessionStart();
-
             Height = MinimumSize.Height;
             if(!Directory.Exists("scripts"))
             {
@@ -776,7 +764,7 @@ namespace WiXInstallerCreator
         }
 
         /// <summary>
-        /// End user reporting session before closing the form.
+        /// Close all background worker before closing the form.
         /// </summary>
         /// <param name="sender">Refers to the object that invoked the event that fired the event handler</param>
         /// <param name="args">Provides a value to use with event</param>
@@ -791,9 +779,6 @@ namespace WiXInstallerCreator
             {
                 createInstallerBackgroundWorker.CancelAsync();
             }
-
-            // end the reporting session
-            reporting.SessionEnd();
         }
 
         #endregion Methods        
