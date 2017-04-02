@@ -1,7 +1,6 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file = "VersionNumberForm.cs" company = "IGT">
-//     Copyright (c) 2011-2016 IGT. All rights reserved.
-// </copyright>
+//-----------------------------------------------------------------------
+// <Author = "Mohammad Reza" />
+// <File = "VersionNumberForm.cs" />
 //-----------------------------------------------------------------------
 
 namespace WiXInstallerCreator
