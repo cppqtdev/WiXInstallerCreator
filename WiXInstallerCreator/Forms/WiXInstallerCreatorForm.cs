@@ -721,16 +721,6 @@ namespace WiXInstallerCreator
         }
 
         /// <summary>
-        /// Opens confluence page in web browser.
-        /// </summary>
-        /// <param name="sender">Refers to the object that invoked the event that fired the event handler</param>
-        /// <param name="args">Provides a value to use with event</param>
-        private void DocumentationToolStripMenuItemClick(object sender, EventArgs args)
-        {
-            Process.Start("https://developers.confluence.igt.com/display/internaltools/WiX+Installer+Creator");
-        }
-
-        /// <summary>
         /// Closes the application.
         /// </summary>
         /// <param name="sender">Refers to the object that invoked the event that fired the event handler</param>

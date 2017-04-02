@@ -63,7 +63,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advanceButton = new System.Windows.Forms.Button();
             this.mainStatusStrip.SuspendLayout();
@@ -88,7 +87,7 @@
             this.companyNameTextBox.Name = "companyNameTextBox";
             this.companyNameTextBox.Size = new System.Drawing.Size(201, 20);
             this.companyNameTextBox.TabIndex = 2;
-            this.companyNameTextBox.Text = "IGT";
+            this.companyNameTextBox.Text = "REZA";
             // 
             // upgradeCodeLabel
             // 
@@ -122,11 +121,11 @@
             this.iconTextBox.Size = new System.Drawing.Size(201, 20);
             this.iconTextBox.TabIndex = 3;
             // 
-            // CreateInstallerButton
+            // createInstallerButton
             // 
             this.createInstallerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.createInstallerButton.Location = new System.Drawing.Point(348, 498);
-            this.createInstallerButton.Name = "CreateInstallerButton";
+            this.createInstallerButton.Name = "createInstallerButton";
             this.createInstallerButton.Size = new System.Drawing.Size(89, 23);
             this.createInstallerButton.TabIndex = 10;
             this.createInstallerButton.Text = "Create Installer";
@@ -149,30 +148,30 @@
             this.projectBinDirectoryTextBox.Size = new System.Drawing.Size(201, 20);
             this.projectBinDirectoryTextBox.TabIndex = 0;
             // 
-            // GenerateGuidButton
+            // generateGuidButton
             // 
             this.generateGuidButton.Location = new System.Drawing.Point(336, 45);
-            this.generateGuidButton.Name = "GenerateGuidButton";
+            this.generateGuidButton.Name = "generateGuidButton";
             this.generateGuidButton.Size = new System.Drawing.Size(89, 23);
             this.generateGuidButton.TabIndex = 12;
             this.generateGuidButton.Text = "Generate";
             this.generateGuidButton.UseVisualStyleBackColor = true;
             this.generateGuidButton.Click += new System.EventHandler(this.GenerateGuidButtonClick);
             // 
-            // BrowseProjectBinFolderButton
+            // browseProjectBinFolderButton
             // 
             this.browseProjectBinFolderButton.Location = new System.Drawing.Point(336, 19);
-            this.browseProjectBinFolderButton.Name = "BrowseProjectBinFolderButton";
+            this.browseProjectBinFolderButton.Name = "browseProjectBinFolderButton";
             this.browseProjectBinFolderButton.Size = new System.Drawing.Size(89, 23);
             this.browseProjectBinFolderButton.TabIndex = 11;
             this.browseProjectBinFolderButton.Text = "Browse";
             this.browseProjectBinFolderButton.UseVisualStyleBackColor = true;
             this.browseProjectBinFolderButton.Click += new System.EventHandler(this.BrowseProjectBinFolderButtonClick);
             // 
-            // BrowseIconButton
+            // browseIconButton
             // 
             this.browseIconButton.Location = new System.Drawing.Point(336, 97);
-            this.browseIconButton.Name = "BrowseIconButton";
+            this.browseIconButton.Name = "browseIconButton";
             this.browseIconButton.Size = new System.Drawing.Size(89, 23);
             this.browseIconButton.TabIndex = 13;
             this.browseIconButton.Text = "Browse";
@@ -189,10 +188,10 @@
             this.licenseRichTextBox.TabIndex = 7;
             this.licenseRichTextBox.Text = "";
             // 
-            // DialogImageButton
+            // dialogImageButton
             // 
             this.dialogImageButton.Location = new System.Drawing.Point(336, 30);
-            this.dialogImageButton.Name = "DialogImageButton";
+            this.dialogImageButton.Name = "dialogImageButton";
             this.dialogImageButton.Size = new System.Drawing.Size(89, 23);
             this.dialogImageButton.TabIndex = 14;
             this.dialogImageButton.Text = "Browse";
@@ -215,10 +214,10 @@
             this.dialogImageTextBox.Size = new System.Drawing.Size(201, 20);
             this.dialogImageTextBox.TabIndex = 8;
             // 
-            // BannerImageButton
+            // bannerImageButton
             // 
             this.bannerImageButton.Location = new System.Drawing.Point(336, 69);
-            this.bannerImageButton.Name = "BannerImageButton";
+            this.bannerImageButton.Name = "bannerImageButton";
             this.bannerImageButton.Size = new System.Drawing.Size(89, 23);
             this.bannerImageButton.TabIndex = 15;
             this.bannerImageButton.Text = "Browse";
@@ -386,23 +385,15 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.documentationToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // documentationToolStripMenuItem
-            // 
-            this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
-            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.documentationToolStripMenuItem.Text = "Documentation";
-            this.documentationToolStripMenuItem.Click += new System.EventHandler(this.DocumentationToolStripMenuItemClick);
-            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
             // 
@@ -490,7 +481,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button advanceButton;
     }
