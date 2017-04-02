@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="[REPLACE_WITH_TOOL_NAME]" Language="1033" Version="!(bind.FileVersion.[REPLACE_WITH_FILE_ID_GENERATED_AFTER_HARVESTING])" Manufacturer="[COMPANY]" UpgradeCode="[UPGRADE_CODE_GUID]">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="[REPLACE_WITH_TOOL_NAME]" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="ApplicationShortcutDesktop" />
+			<ComponentRef Id="ApplicationShortcut" />
+		</Feature>
+		<Icon Id="icon.ico" SourceFile="[REPLACE_WITH_PATH_TO_ICON_FILE]"/>
+		<Property Id="ARPPRODUCTICON" Value="icon.ico" />
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+		<WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+		<WixVariable Id="WixUIBannerBmp" Value="bannerbmp.bmp" />
+		<WixVariable Id="WixUIDialogBmp" Value="dialogbmp.bmp" />
+		<UIRef Id="WixUI_InstallDir" />
+		<UI>
+			<UIRef Id="WixUI_InstallDir" />
+			<Publish Dialog="WelcomeDlg"
+				Control="Next"
+				Event="NewDialog"
+				Value="InstallDirDlg"
+				Order="2">1</Publish>
+			<Publish Dialog="InstallDirDlg"
+				Control="Back"
+				Event="NewDialog"
+				Value="WelcomeDlg"
+				Order="2">1</Publish>
+		</UI>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="DesktopFolder" Name="Desktop">
+				<Component Id="ApplicationShortcutDesktop" Guid="[REPLACE_WITH_GUID_DESKTOP]">
+					<Shortcut Id="ApplicationDesktopShortcut"
+						Name="[REPLACE_WITH_TOOL_NAME]"
+						Description="[REPLACE_WITH_TOOL_DESCRIPTION]"
+						Target="[INSTALLFOLDER][REPLACE_WITH_TOOL_NAME].exe"
+						WorkingDirectory="INSTALLFOLDER">
+						<Icon Id="desktop.ico" SourceFile="[REPLACE_WITH_PATH_TO_ICON_FILE]" />
+					</Shortcut>
+					<RemoveFolder Id="DesktopFolder" On="uninstall"/>
+					<RegistryValue
+						Root="HKCU" Key="Software\IGT\[REPLACE_WITH_TOOL_NAME]" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+				</Component>
+			</Directory>
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="ManufacturerFolder" Name="IGT">
+					<Directory Id="INSTALLFOLDER" Name="[REPLACE_WITH_TOOL_NAME]" />
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ProgramMenuManufacturerFolder" Name="IGT">
+					<Directory Id="ApplicationProgramsFolder" Name="[REPLACE_WITH_TOOL_NAME]"/>
+				</Directory>
+            </Directory>
+		</Directory>
+		
+		<DirectoryRef Id="ApplicationProgramsFolder">
+            <Component Id="ApplicationShortcut" Guid="[REPLACE_WITH_GUID_PROGRAM]">
+                <Shortcut Id="ApplicationStartMenuShortcut" 
+                    Name="[REPLACE_WITH_TOOL_NAME]" 
+                    Description="[TOOL_DESCRIPTION]"
+                    Target="[INSTALLFOLDER][REPLACE_WITH_TOOL_NAME].exe"
+                          WorkingDirectory="INSTALLFOLDER"/>
+                <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+                <RegistryValue Root="HKCU" Key="Software\IGT\[REPLACE_WITH_TOOL_NAME]" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+           </Component>
+        </DirectoryRef>
+	</Fragment>	
+</Wix>
