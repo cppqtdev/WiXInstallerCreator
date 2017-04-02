@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("WiXInstallerCreator")]
 [assembly: AssemblyDescription("This tool helps creating wix based setup files.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("IGT")]
+[assembly: AssemblyCompany("Reza")]
 [assembly: AssemblyProduct("WiXInstallerCreator")]
-[assembly: AssemblyCopyright("Copyright ©  2016 IGT")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
